@@ -1,0 +1,16 @@
+image: Ubuntu
+
+stack: jdk 11
+
+branches:
+  only:
+    - main
+
+build: off
+
+install:
+  # запускаем SUT (& означает, что в фоновом режиме не блокируем терминал для запуска тестов)
+   - chmod +x gradlew
+
+build_script:
+  - ./gradlew test --info
